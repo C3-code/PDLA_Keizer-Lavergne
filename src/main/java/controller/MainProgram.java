@@ -1,44 +1,38 @@
 package controller;
 
 import controller.GestionBdd;
+import model.*;
 
 import java.sql.*;
-import java.util.Scanner;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.Date;
 
 public class MainProgram {
 
     //Se connecter à la base de données
-  
+
+    public static GestionBdd base = new GestionBdd();
+
+    static Inscription inscription;
 
 
 
-
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, ParseException {
         //System.out.println("Hello world!");
-
-        /*********************/
-        /**A deplacer eventuellement*/
-        /*********************/
-        Scanner sc = new Scanner(System.in);
-        System.out.println("What is your last name ?");
-        String name = sc.nextLine();
-        System.out.println("What is your first name ?");
-        String firstName = sc.nextLine();
-        sc.close();
-        System.out.println("You chose :"+name+firstName);
-        //On crée un utilisateur a partir des infos qu'on recupere puis on passe l'utilisateur en parametre de la fonction addperson
-
         /*********************/
         /**Connexion a la BDD*/
         /*********************/
-        GestionBdd base = new GestionBdd();
+
         base.Connexion_BDD();
-        base.addPerson();
+        inscription = new Inscription();
+        inscription.userCreation();
 
 
-        /****Creer ligne dans BDD*/
 
 
-        System.out.println("Hello");
+
+        //Date date = new SimpleDateFormat("dd/MM/yyyy").parse(birthDate);
     }
 }

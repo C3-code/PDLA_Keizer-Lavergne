@@ -1,5 +1,10 @@
 package controller;
 
+import model.Beneficiary;
+import model.Mission;
+import model.User;
+import model.User;
+
 import java.sql.*;
 
 /*Classe destinée a gerer la connexion de l'application a la base de données*/
@@ -38,11 +43,54 @@ public class GestionBdd{
 
     }
 
-    public void addPerson() throws SQLException {
+    public void addPerson(User user) throws SQLException {
 
-        Statement statement = this.conn.createStatement();
+        //Statement statement = this.conn.createStatement();
 
-        statement.executeUpdate("INSERT INTO Individus(nom,prenom,mail,numeroTelephone,dateNaissance,typeUser)" + "VALUES('Lavergne','Lelia','clelia@ahhh.com','0355123365','11/01/2022','Beneficiary')");
+        String query = "INSERT INTO Individus(nom, prenom, mail, numeroTelephone, dateNaissance, typeUser) VALUES (?, ?, ?, ?, ?, ?)";
 
+        try (PreparedStatement statement = this.conn.prepareStatement(query)) {
+            // Remplir les paramètres de la requête avec les valeurs de l'utilisateur
+            statement.setString(1, user.getName());
+            statement.setString(2, user.getFirstname());
+            statement.setString(3, user.getMail());
+            statement.setString(4, user.getPhoneNumber());
+            statement.setString(5, user.getBirthDate());
+            statement.setString(6, user.getType());
+
+            // Exécution de la requête
+            statement.executeUpdate();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+                throw e;  // Propager l'exception après l'avoir affichée
+            }
     }
+    public void addMission(String name, Mission mission) throws SQLException {
+
+        //Statement statement = this.conn.createStatement();
+
+        String query = "INSERT INTO Missions(beneficiary,missionName,description,expirationDate,location,healthPro) VALUES (?, ?, ?, ?, ?, ?)";
+
+        try (PreparedStatement statement = this.conn.prepareStatement(query)) {
+            // Remplir les paramètres de la requête avec les valeurs de l'utilisateur
+            statement.setString(1, name);
+            statement.setString(2, mission.getMissionName());
+            statement.setString(3, mission.getDescription());
+            statement.setString(4, mission.getDate());
+            statement.setString(5, mission.getLocation());
+            statement.setString(6, mission.getHealthPro());
+
+            // Exécution de la requête
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;  // Propager l'exception après l'avoir affichée
+        }
+    }
+
+        //statement.executeUpdate("INSERT INTO Individus(nom,prenom,mail,numeroTelephone,dateNaissance,typeUser)" + "VALUES(" + user.getName() + "," + user.getFirstname() + "," + user.getMail() + "," + user.getPhoneNumber() + "," + user.getBirthDate() + ", 'Beneficiary')");
+
 }
+

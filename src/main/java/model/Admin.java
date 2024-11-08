@@ -2,7 +2,7 @@ package model;
 
 import java.util.Date;
 
-public class Admin extends Users {
+public class Admin extends User {
 
     /***********Constructeur
      * @param prenom
@@ -11,7 +11,7 @@ public class Admin extends Users {
      * @param mail
      * @param numTelephone
      * @param type**********/
-    public Admin(String prenom, String nom, Date dateNaissance, String mail, String numTelephone, TypeUser type) {
+    public Admin(String prenom, String nom, String dateNaissance, String mail, String numTelephone, TypeUser type) {
         super(prenom, nom, dateNaissance, mail, numTelephone, type);
     }
 }

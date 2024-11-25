@@ -28,7 +28,7 @@ public class MainProgram {
         base.Connexion_BDD();
         inscription = new Inscription();
         inscription.userCreation();
-
+        base.printMissions();
 
 
 

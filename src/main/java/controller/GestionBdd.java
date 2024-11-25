@@ -17,8 +17,8 @@ public class GestionBdd{
     private String url;
     private String projectName;
     private String password;
-
     private Connection conn = null;
+    private String query;
 
     /************Constructeur*******/
     public GestionBdd() {
@@ -47,7 +47,7 @@ public class GestionBdd{
 
         //Statement statement = this.conn.createStatement();
 
-        String query = "INSERT INTO Individus(nom, prenom, mail, numeroTelephone, dateNaissance, typeUser) VALUES (?, ?, ?, ?, ?, ?)";
+        query = "INSERT INTO Individus(nom, prenom, mail, numeroTelephone, dateNaissance, typeUser) VALUES (?, ?, ?, ?, ?, ?)";
 
         try (PreparedStatement statement = this.conn.prepareStatement(query)) {
             // Remplir les paramètres de la requête avec les valeurs de l'utilisateur
@@ -70,7 +70,7 @@ public class GestionBdd{
 
         //Statement statement = this.conn.createStatement();
 
-        String query = "INSERT INTO Missions(beneficiary,missionName,description,expirationDate,location,healthPro) VALUES (?, ?, ?, ?, ?, ?)";
+        query = "INSERT INTO Missions(beneficiary,missionName,description,expirationDate,location,healthPro,state) VALUES (?, ?, ?, ?, ?, ?,true)";
 
         try (PreparedStatement statement = this.conn.prepareStatement(query)) {
             // Remplir les paramètres de la requête avec les valeurs de l'utilisateur
@@ -90,6 +90,26 @@ public class GestionBdd{
         }
     }
 
+    /** Display the table of current open missions
+     *
+     * @throws SQLException
+     */
+    public void printMissions () throws SQLException {
+        Statement statement = this.conn.createStatement();
+        ResultSet result = statement.executeQuery("SELECT * FROM Missions WHERE (state = 1);"); //only print missions that are open (state = true = 1)
+        while(result.next()) {
+            final int id = result.getInt("id");
+            final String beneficiary = result.getString("beneficiary");
+            final String mission = result.getString("missionName");
+            final String description = result.getString("description");
+            final String date = result.getString("expirationDate");
+            final String location = result.getString("location");
+            System.out.println("----------------------------------------------------------------------------------------------");
+            System.out.println("Mission " +id +" : "+ mission );
+            System.out.println("            "+ "inquirer: "+beneficiary+ "   -   date: "+date+"   -   location: "+location);
+            System.out.println("            Description: "+ description);
+        }
+    }
         //statement.executeUpdate("INSERT INTO Individus(nom,prenom,mail,numeroTelephone,dateNaissance,typeUser)" + "VALUES(" + user.getName() + "," + user.getFirstname() + "," + user.getMail() + "," + user.getPhoneNumber() + "," + user.getBirthDate() + ", 'Beneficiary')");
 
 }

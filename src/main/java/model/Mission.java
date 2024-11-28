@@ -8,6 +8,13 @@ public class Mission {
 
     private String healthPro;
 
+    /** Pour une mission plusieurs états sont possibles
+     *
+     */
+    private String state;
+
+
+
     public Mission(String missionName, String description, String date, String location, String healthPro) {
         this.missionName = missionName;
         this.description = description;

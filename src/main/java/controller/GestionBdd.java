@@ -9,6 +9,11 @@ import java.sql.*;
 
 /*Classe destinée a gerer la connexion de l'application a la base de données*/
 public class GestionBdd{
+
+    private static final GestionBdd BDD = new GestionBdd();
+    public static GestionBdd getInstance() {
+        return BDD;
+    }
     /*********Constantes**********/
     String link = "jdbc:mysql://srv-bdens.insa-toulouse.fr:3306/projet_gei_020 ";
     String userName = "projet_gei_020";
@@ -88,6 +93,16 @@ public class GestionBdd{
             e.printStackTrace();
             throw e;  // Propager l'exception après l'avoir affichée
         }
+    }
+
+    /** Modifier l'état de la mission lorsuq'elle a été acceptée
+     * @param numMission
+     * @throws SQLException
+     */
+    public void updateState(int numMission, String volunteerName) throws SQLException {
+        Statement statement = this.conn.createStatement();
+        statement.executeQuery("UPDATE Missions SET state = 0 WHERE (id = numMission)");
+        statement.executeQuery("UPDATE Missions SET volunteer = volunteerName WHERE (id = numMission)");
     }
 
     /** Display the table of current open missions

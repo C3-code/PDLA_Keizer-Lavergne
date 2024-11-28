@@ -4,7 +4,6 @@ import java.util.Date;
 
 /*Classe destinée a la gestion des utilisateurs qui supervisent les bénéficiaires qui demandent de l'aide */
 public class HealthPro extends User {
-
     /***********Constructeur
      * @param prenom
      * @param nom

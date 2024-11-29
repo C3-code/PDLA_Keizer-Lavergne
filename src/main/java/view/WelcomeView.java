@@ -1,9 +1,9 @@
 package view;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 import controller.*;
+
 
 
 public class WelcomeView extends JFrame {
@@ -43,7 +43,8 @@ public class WelcomeView extends JFrame {
 
         // ActionListener pour le bouton "Create an account"
         // Action pour le bouton "Create an account"
-        createAccountButton.addActionListener(e -> Inscription.showCreateAccountView() );
+        createAccountButton.addActionListener(e -> UserConnection.showCreateAccountView() );
+        loginButton.addActionListener(e -> UserConnection.showConnectionView() );
 
 
         // Afficher la fenêtre

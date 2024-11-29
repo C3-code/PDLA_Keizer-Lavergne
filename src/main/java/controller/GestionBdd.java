@@ -1,8 +1,6 @@
 package controller;
 
-import model.Beneficiary;
 import model.Mission;
-import model.User;
 import model.User;
 
 import java.sql.*;
@@ -101,15 +99,15 @@ public class GestionBdd{
      */
     public void updateState(int numMission, String volunteerName) throws SQLException {
         Statement statement = this.conn.createStatement();
-        statement.executeQuery("UPDATE Missions SET state = 0 WHERE (id = numMission)");
-        statement.executeQuery("UPDATE Missions SET volunteer = volunteerName WHERE (id = numMission)");
+        statement.executeQuery("UPDATE Missions SET state = 0 WHERE (id = numMission);");
+        statement.executeQuery("UPDATE Missions SET volunteer = volunteerName WHERE (id = numMission);");
     }
 
     /** Display the table of current open missions
      *
      * @throws SQLException
      */
-    public void printMissions () throws SQLException {
+    public void printMissions() throws SQLException {
         Statement statement = this.conn.createStatement();
         ResultSet result = statement.executeQuery("SELECT * FROM Missions WHERE (state = 1);"); //only print missions that are open (state = true = 1)
         while(result.next()) {
@@ -125,6 +123,21 @@ public class GestionBdd{
             System.out.println("            Description: "+ description);
         }
     }
+
+    public boolean userExists(String email) throws SQLException {
+        String query = "SELECT * FROM Individus WHERE mail = ?";
+        try (PreparedStatement stmt = this.conn.prepareStatement(query)) {
+            stmt.setString(1, email);  // Set the email as a parameter
+            ResultSet result = stmt.executeQuery();
+
+            if (result.next()) {  // Check if there is a row
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
         //statement.executeUpdate("INSERT INTO Individus(nom,prenom,mail,numeroTelephone,dateNaissance,typeUser)" + "VALUES(" + user.getName() + "," + user.getFirstname() + "," + user.getMail() + "," + user.getPhoneNumber() + "," + user.getBirthDate() + ", 'Beneficiary')");
 
 }

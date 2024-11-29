@@ -1,15 +1,10 @@
 package controller;
 
-import controller.GestionBdd;
-import model.*;
 import view.WelcomeView;
 
 import javax.swing.*;
 import java.sql.*;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.Date;
 
 public class MainProgram {
 
@@ -17,7 +12,7 @@ public class MainProgram {
 
     public static GestionBdd base = GestionBdd.getInstance();
 
-    static Inscription inscription;
+    static UserConnection userConnection;
 
 
 

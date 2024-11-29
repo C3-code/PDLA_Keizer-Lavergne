@@ -2,7 +2,6 @@ package view;
 import controller.*;
 
 import javax.swing.*;
-import java.awt.*;
 import java.sql.SQLException;
 
 public class CreateAccountView extends JFrame{
@@ -61,6 +60,9 @@ public class CreateAccountView extends JFrame{
         });
         formPanel.add(submitButton);
 
+        JButton mainPageButton = new JButton("Main Page");
+        formPanel.add(mainPageButton);
+
         getContentPane().add(formPanel);
         setVisible(true);
     }
@@ -76,7 +78,7 @@ public class CreateAccountView extends JFrame{
 
         // Appeler la méthode du contrôleur pour traiter ces données
         //assert role != null;
-        Inscription.createUser(firstName,lastName,birthDate,email,phoneNumber,role);
+        UserConnection.createUser(firstName,lastName,birthDate,email,phoneNumber,role);
         // Remarque : Le contrôleur va récupérer ces données et créer l'utilisateur
         System.out.println("Form submitted with data: " + firstName + " " + lastName);
     }

@@ -53,8 +53,10 @@ public class CreateAccountView extends JFrame{
         submitButton.addActionListener(e -> {
             try {
                 submitForm();
+                JOptionPane.showMessageDialog(formPanel, "Subscription saved successfully");
             } catch (SQLException ex) {
                 System.out.println("Error submitting the form.");
+                JOptionPane.showMessageDialog(formPanel, "Error submitting the form.");
                 throw new RuntimeException(ex);
             }
         });
@@ -79,7 +81,9 @@ public class CreateAccountView extends JFrame{
         // Appeler la méthode du contrôleur pour traiter ces données
         //assert role != null;
         UserConnection.createUser(firstName,lastName,birthDate,email,phoneNumber,role);
+
         // Remarque : Le contrôleur va récupérer ces données et créer l'utilisateur
-        System.out.println("Form submitted with data: " + firstName + " " + lastName);
+        System.out.println("Form submitted with data: " + firstName + " " + lastName+ " "+email);
+        //UserConnection.showConnectionView();
     }
 }

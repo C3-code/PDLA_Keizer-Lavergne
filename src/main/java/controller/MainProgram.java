@@ -1,7 +1,8 @@
 package controller;
 
+import view.VolunteerView;
 import view.WelcomeView;
-
+import view.CreateAccountView;
 import javax.swing.*;
 import java.sql.*;
 import java.text.ParseException;
@@ -29,6 +30,9 @@ public class MainProgram {
 
         // Lancer l'application dans le thread de l'interface graphique
         SwingUtilities.invokeLater(WelcomeView::createWelcomeView);
+
+        //Test appel fenêtre volontaire
+        //SwingUtilities.invokeLater(VolunteerView::showVolunteerView);
 
 
         //Date date = new SimpleDateFormat("dd/MM/yyyy").parse(birthDate);

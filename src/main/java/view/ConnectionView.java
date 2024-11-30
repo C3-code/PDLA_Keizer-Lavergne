@@ -11,7 +11,7 @@ public class ConnectionView extends JFrame {
 
 
         public void showConnectionField()  {
-            setTitle("Create Account");
+            setTitle("Connection Page");
             setSize(400, 350);
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -46,7 +46,6 @@ public class ConnectionView extends JFrame {
         // Méthode pour récupérer les données du formulaire
         private void submitConnection() throws SQLException {
             String mail = mailField.getText();
-
             // Appeler la méthode du contrôleur pour traiter ces données
             UserConnection.connectUser(mail);
 

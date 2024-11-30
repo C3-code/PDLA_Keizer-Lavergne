@@ -1,10 +1,13 @@
 package model;/*Classe abstraite regroupant l'ensemble des attributs communs a tous les utilisateurs*/
 
+import controller.GestionBdd;
+
 import java.sql.SQLException;
 
 public class User {
     public void createMission() throws SQLException {
     }
+
 
     public enum TypeUser {VOLUNTEER,BENEFICIARY,HEALTHPRO,ADMIN}
     /************Attributs*************/
@@ -63,5 +66,27 @@ public class User {
 
 
     //2// Les setteurs
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setType(TypeUser type) {
+        this.type = type;
+    }
 }

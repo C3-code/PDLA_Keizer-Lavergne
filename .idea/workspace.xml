@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae176f28-9f3a-4ac6-b87f-d7e39ed827b3" name="Changes" comment="MAJ">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ConnectionView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/VolunteerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/GestionBdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GestionBdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Inscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Volunteer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Volunteer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ConnectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ConnectionView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/CreateAccountView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateAccountView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/WelcomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/WelcomeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +59,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainProgram">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -94,8 +96,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VolunteerView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.VolunteerView" />
+      <module name="PDLA_Keizer-Lavergne" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.VolunteerView" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>

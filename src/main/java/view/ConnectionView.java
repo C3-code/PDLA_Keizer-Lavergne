@@ -29,6 +29,7 @@ public class ConnectionView extends JFrame {
             connectButton.addActionListener(e -> {
                 try {
                     submitConnection();
+                    setVisible(false);
                 } catch (SQLException ex) {
                     System.out.println("Error connecting.");
                     throw new RuntimeException(ex);
@@ -48,9 +49,6 @@ public class ConnectionView extends JFrame {
             String mail = mailField.getText();
             // Appeler la méthode du contrôleur pour traiter ces données
             UserConnection.connectUser(mail);
-
-
-
         }
 
 }

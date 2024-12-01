@@ -62,8 +62,14 @@ public class CreateAccountView extends JFrame{
         });
         formPanel.add(submitButton);
 
-        JButton mainPageButton = new JButton("Main Page");
-        formPanel.add(mainPageButton);
+        JButton connectPageButton = new JButton("If you already have an account, please connect");
+        connectPageButton.addActionListener(e -> {
+            UserConnection.showConnectionView();
+            formPanel.setVisible(false);
+        });
+
+        formPanel.add(connectPageButton);
+
 
         getContentPane().add(formPanel);
         setVisible(true);

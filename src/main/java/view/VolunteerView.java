@@ -82,7 +82,7 @@ public class VolunteerView extends JFrame {
         catalogButton.addActionListener(e -> {
             String allMissions = null;
             try {
-                allMissions = GestionBdd.getInstance().getAllMissions();
+                allMissions = GestionBdd.getInstance().getOpenMissions();
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             }
@@ -92,7 +92,7 @@ public class VolunteerView extends JFrame {
         currentMissionsButton.addActionListener(e -> {
             String currentMissions = null;
             try {
-                currentMissions = GestionBdd.getInstance().getCurrentMissions(UserConnection.getInstance());
+                currentMissions = GestionBdd.getInstance().getCurrentMissions();
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             }

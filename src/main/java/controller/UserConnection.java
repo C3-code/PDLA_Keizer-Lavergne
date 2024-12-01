@@ -16,6 +16,8 @@ public class UserConnection {
         CreateAccountView subscription = new CreateAccountView();
         subscription.showSubscriptionField();
     }
+
+
     public static void createUser(String firstName, String name, String birthDate, String mail, String phoneNumber, String role) throws SQLException {
             //Creation en local (notre instance de user)
             switch (role) {
@@ -73,7 +75,12 @@ public class UserConnection {
             System.out.println("Connection with email address: " + mail);
             //Appel de l'ui Profile adaptee au profil de l'utilisateur
             GestionBdd.getInstance().getProfile(mail);// charger toutes les infos de l'utilisateur a partir de son mail
-            VolunteerView.showVolunteerView(); //cense afficher que  les current/previous mission de l'utilisateur actuel
+            if (thisUser.getType().equals("VOLUNTEER")) {
+                VolunteerView.showVolunteerView(); //cense afficher que  les current/previous mission de l'utilisateur actuel
+            }
+            else if (thisUser.getType().equals("BENEFICIARY")) {
+                BeneficiaryView.showBeneficiaryView();
+            }
 
         }
 

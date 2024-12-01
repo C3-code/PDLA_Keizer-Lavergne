@@ -4,6 +4,9 @@ import model.Mission;
 import model.User;
 
 import java.sql.*;
+import java.util.Objects;
+
+import static controller.UserConnection.thisUser;
 
 
 /*Classe destinée a gerer la connexion de l'application a la base de données*/
@@ -102,7 +105,7 @@ public class GestionBdd{
 
         //Statement statement = this.conn.createStatement();
 
-        query = "INSERT INTO Missions(beneficiary,missionName,description,expirationDate,location,healthPro,state) VALUES (?, ?, ?, ?, ?, ?,true)";
+        query = "INSERT INTO Missions(beneficiary,missionName,description,expirationDate,location,healthPro,state,volunteer) VALUES (?, ?, ?, ?, ?,?,?,?)";
 
         try (PreparedStatement statement = this.conn.prepareStatement(query)) {
             // Remplir les paramètres de la requête avec les valeurs de l'utilisateur
@@ -112,6 +115,8 @@ public class GestionBdd{
             statement.setString(4, mission.getDate());
             statement.setString(5, mission.getLocation());
             statement.setString(6, mission.getHealthPro());
+            statement.setString(7, "open");
+            statement.setString(8, "none" );
 
             // Exécution de la requête
             statement.executeUpdate();
@@ -126,9 +131,30 @@ public class GestionBdd{
      *
      * @throws SQLException
      */
-    public String getAllMissions() throws SQLException {
+    public String getOpenMissions() throws SQLException {
         Statement statement = this.conn.createStatement();
-        ResultSet result = statement.executeQuery("SELECT * FROM Missions WHERE (state = 'open');"); //only print missions that are open (state = true = 1)
+        ResultSet result;
+        String query;
+
+        // Vérification du type d'utilisateur (Bénéficiaire ou Volontaire)
+        if (thisUser.getType().equals("BENEFICIARY")) {
+            // Si c'est un bénéficiaire, on filtre les missions "open" et où le nom du bénéficiaire est égal à celui de l'utilisateur
+            query = "SELECT * FROM Missions WHERE (state = 'open') AND (beneficiary = ?);";
+
+            // Utilisation d'un PreparedStatement pour passer le paramètre
+            PreparedStatement preparedStatement = this.conn.prepareStatement(query);
+            preparedStatement.setString(1, thisUser.getName());
+
+            // Exécution de la requête
+            result = preparedStatement.executeQuery();
+        } else {
+            // Si c'est un volontaire, on affiche toutes les missions "open"
+            query = "SELECT * FROM Missions WHERE (state = 'open');";
+
+            // Exécution de la requête sans paramètre
+            result = statement.executeQuery(query);
+        }
+
         String texte = "----------------------------------------------- Catalog of available missions ------------------------------------------------------------\n";
         while(result.next()) {
             final int id = result.getInt("id");
@@ -145,19 +171,37 @@ public class GestionBdd{
         return texte;
     }
 
-    public String getCurrentMissions(User user) throws SQLException {
+    public String getCurrentMissions() throws SQLException {
         String allMissions = null;
-        //par la suite faire un if pour differencier getcurrent missions d'un volontaire et d'un beneficiare
-        // Utilisation d'un PreparedStatement pour la requête avec paramètre
-        String query = "SELECT * FROM Missions WHERE (state = 'accepted') AND (volunteer = ?)";
-        try (PreparedStatement statement = this.conn.prepareStatement(query)) {
-            // Lier le paramètre (l'email de l'utilisateur)
-            statement.setString(1, user.getMail());
 
-            /* Construction du catalogue des missions depuis les informations de la base de données */
-            ResultSet result = statement.executeQuery();
+        // Utilisation d'un PreparedStatement, quel que soit le type d'utilisateur
+        PreparedStatement preparedStatement;
+        ResultSet result;
+        String query;
 
-            allMissions = "--------------------------------------------------- My current missions ------------------------------------------------------------\n";
+        // Vérification du type d'utilisateur (Bénéficiaire ou Volontaire)
+        if (thisUser.getType().equals("BENEFICIARY")) {
+            // Si c'est un bénéficiaire, on filtre les missions "accepted" et où le nom du bénéficiaire est égal à celui de l'utilisateur
+            query = "SELECT * FROM Missions WHERE (state = 'accepted') AND (beneficiary = ?);";
+
+            // Création d'un PreparedStatement
+            preparedStatement = this.conn.prepareStatement(query);
+            preparedStatement.setString(1, thisUser.getName());
+
+            // Exécution de la requête
+        } else {
+            // Si c'est un volontaire, on filtre les missions "accepted" et où le mail du volontaire est égal à celui de l'utilisateur
+            query = "SELECT * FROM Missions WHERE (state = 'accepted') AND (volunteer = ?);";
+
+            // Création d'un PreparedStatement
+            preparedStatement = this.conn.prepareStatement(query);
+            preparedStatement.setString(1, thisUser.getMail());
+
+            // Exécution de la requête
+        }
+        result = preparedStatement.executeQuery();
+
+        allMissions = "--------------------------------------------------- My current missions ------------------------------------------------------------\n";
             while (result.next()) {
                 final int id = result.getInt("id");
                 final String beneficiary = result.getString("beneficiary");
@@ -171,27 +215,39 @@ public class GestionBdd{
                         + "                    " + "inquirer: " + beneficiary + "   -   date: " + date + "   -   location: " + location + "\n"
                         + "                    Description: " + description + "\n";
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw e;  // Propager l'exception après l'avoir affichée
-        }
 
         return allMissions;
     }
 
     public String getPreviousMissions(User user) throws SQLException {
         String previousMissions = null;
-        //par la suite faire un if pour differencier getcurrent missions d'un volontaire et d'un beneficiare
-        // Utilisation d'un PreparedStatement pour la requête avec paramètre
-        String query = "SELECT * FROM Missions WHERE (state = 'done') AND (volunteer = ?)";
-        try (PreparedStatement statement = this.conn.prepareStatement(query)) {
-            statement.setString(1, user.getMail());
+        PreparedStatement preparedStatement;
+        ResultSet result;
+        String query;
 
+        // Vérification du type d'utilisateur (Bénéficiaire ou Volontaire)
+        if (thisUser.getType().equals("BENEFICIARY")) {
+            // Si c'est un bénéficiaire, on filtre les missions "accepted" et où le nom du bénéficiaire est égal à celui de l'utilisateur
+            query = "SELECT * FROM Missions WHERE (state = 'done') AND (beneficiary = ?);";
 
-            /* Construction du catalogue des missions depuis les informations de la base de données */
-            ResultSet result = statement.executeQuery();
+            // Création d'un PreparedStatement
+            preparedStatement = this.conn.prepareStatement(query);
+            preparedStatement.setString(1, thisUser.getName());
 
-            previousMissions = "--------------------------------------------------- My previous missions ------------------------------------------------------------\n";
+            // Exécution de la requête
+        } else {
+            // Si c'est un volontaire, on filtre les missions "accepted" et où le mail du volontaire est égal à celui de l'utilisateur
+            query = "SELECT * FROM Missions WHERE (state = 'done') AND (volunteer = ?);";
+
+            // Création d'un PreparedStatement
+            preparedStatement = this.conn.prepareStatement(query);
+            preparedStatement.setString(1, thisUser.getMail());
+
+            // Exécution de la requête
+        }
+        result = preparedStatement.executeQuery();
+
+        previousMissions = "--------------------------------------------------- My previous missions ------------------------------------------------------------\n";
             while (result.next()) {
                 final int id = result.getInt("id");
                 final String beneficiary = result.getString("beneficiary");
@@ -205,10 +261,7 @@ public class GestionBdd{
                         + "                    " + "inquirer: " + beneficiary + "   -   date: " + date + "   -   location: " + location + "\n"
                         + "                    Description: " + description + "\n";
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw e;  // Propager l'exception après l'avoir affichée
-        }
+
 
         return previousMissions;
     }
@@ -241,12 +294,25 @@ public class GestionBdd{
      * @throws SQLException
      */
     public void participateInMission(int numMission, String volunteerMail) throws SQLException {
-        String query = "UPDATE Missions SET state = 'accepted', volunteer = ? WHERE id = ?";
+        String query = "UPDATE Missions SET state = 'accepted', volunteer = ? WHERE id = ?;";
         try (PreparedStatement stmt = this.conn.prepareStatement(query)) {
             // Lier les paramètres à la requête
             stmt.setString(1, volunteerMail); // Le nom du volontaire
             stmt.setInt(2, numMission);// L'ID de la mission
 
+            // Exécution de la requête
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;  // Propager l'exception après l'avoir affichée
+        }
+    }
+
+    public void endMission(int numMission) throws SQLException {
+        String query = "UPDATE Missions SET state = 'done' WHERE id = ?;";
+        try (PreparedStatement stmt = this.conn.prepareStatement(query)) {
+            // Lier les paramètres à la requête
+            stmt.setInt(1, numMission); // Le nom du volontaire
             // Exécution de la requête
             stmt.executeUpdate();
         } catch (SQLException e) {

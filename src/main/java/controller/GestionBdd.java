@@ -1,5 +1,6 @@
 package controller;
 
+import model.Avis;
 import model.Mission;
 import model.User;
 
@@ -315,6 +316,27 @@ public class GestionBdd{
             stmt.setInt(1, numMission); // Le nom du volontaire
             // Exécution de la requête
             stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;  // Propager l'exception après l'avoir affichée
+        }
+    }
+
+    public void addComment(Avis avis) throws SQLException {
+        query = "INSERT INTO Avis(utilisateur,missionId,missionName,commentDate,destinataire,commentaire) VALUES (?, ?,?, ?, ?, ?)";
+
+        try (PreparedStatement statement = this.conn.prepareStatement(query)) {
+            // Remplir les paramètres de la requête avec les valeurs de l'utilisateur
+            statement.setString(1, thisUser.getName());
+            statement.setInt(2, avis.getMissionId());
+            statement.setString(3, avis.getMissionName());
+            statement.setString(4, avis.getCommentDate());
+            statement.setString(5, avis.getDestinataire());
+            statement.setString(6, avis.getCommentaire());
+
+            // Exécution de la requête
+            statement.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
             throw e;  // Propager l'exception après l'avoir affichée

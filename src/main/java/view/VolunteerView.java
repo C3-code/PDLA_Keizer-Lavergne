@@ -7,6 +7,7 @@ import controller.*;
 import model.User;
 
 import static java.lang.Integer.decode;
+import static view.WelcomeView.showWelcomeView;
 
 public class VolunteerView extends JFrame {
 
@@ -69,6 +70,9 @@ public class VolunteerView extends JFrame {
         JButton participateButton = new JButton("Soumettre");
         participatePanel.add(participateButton);
 
+        JButton disconnectButton = new JButton("Disconnect");
+        participatePanel.add(disconnectButton);
+
         // Ajouter un peu d'espacement entre les éléments
         participatePanel.add(Box.createVerticalStrut(10));
 
@@ -129,6 +133,11 @@ public class VolunteerView extends JFrame {
                 throw new RuntimeException(ex);
             }
 
+        });
+
+        disconnectButton.addActionListener(e -> {
+            showWelcomeView();
+            frame.setVisible(false);
         });
 
         // Afficher la fenêtre

@@ -5,6 +5,8 @@ import view.*;
 import java.sql.SQLException;
 
 
+
+
 public class UserConnection {
     public static User thisUser;
     public static User getInstance() {
@@ -58,7 +60,7 @@ public class UserConnection {
                 thisUser  = new Admin(firstName, name, birthDate, mail, phoneNumber, User.TypeUser.ADMIN);
                 break;
         }
-        System.out.println("Infos retrouvees: nom: "+ thisUser.getName()+" mail: "+thisUser.getMail());
+        System.out.println("Infos retrouvees: nom: "+ thisUser.getName()+" mail: "+thisUser.getMail() + "role: " +thisUser.getType());
     }
 
     public static void showConnectionView() {
@@ -79,6 +81,7 @@ public class UserConnection {
                 VolunteerView.showVolunteerView(); //cense afficher que  les current/previous mission de l'utilisateur actuel
             }
             else if (thisUser.getType().equals("BENEFICIARY")) {
+                System.out.println(thisUser.getType());
                 BeneficiaryView.showBeneficiaryView();
             }
 

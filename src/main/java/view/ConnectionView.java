@@ -15,7 +15,7 @@ public class ConnectionView extends JFrame {
 
         public void showConnectionField()  {
             setTitle("Connection Page");
-            setSize(400, 350);
+            setSize(600, 400);
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             // Panel pour le formulaire
@@ -29,15 +29,7 @@ public class ConnectionView extends JFrame {
 
             // Bouton pour soumettre le formulaire
             JButton connectButton = new JButton("Connect");
-            /*connectButton.addActionListener(e -> {
-                try {
-                    submitConnection();
-                    setVisible(false);
-                } catch (SQLException ex) {
-                    System.out.println("Error connecting.");
-                    throw new RuntimeException(ex);
-                }
-            });*/
+
 
             connectButton.addActionListener(e -> {
                 String mail = mailField.getText();

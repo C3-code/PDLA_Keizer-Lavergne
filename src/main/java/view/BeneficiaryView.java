@@ -10,6 +10,7 @@ import model.Mission;
 import model.User;
 
 import static java.lang.Integer.decode;
+import static view.WelcomeView.showWelcomeView;
 
 public class BeneficiaryView extends JFrame {
 
@@ -80,6 +81,9 @@ public class BeneficiaryView extends JFrame {
         JButton endMissionButton = new JButton("Soumettre");
         endMissionPanel.add(endMissionButton);
 
+        JButton disconnectButton = new JButton("Disconnect");
+        endMissionPanel.add(disconnectButton);
+
         // Ajouter un peu d'espacement entre les éléments
         endMissionPanel.add(Box.createVerticalStrut(10));
 
@@ -142,6 +146,11 @@ public class BeneficiaryView extends JFrame {
                 throw new RuntimeException(ex);
             }
 
+        });
+
+        disconnectButton.addActionListener(e -> {
+            showWelcomeView();
+            frame.setVisible(false);
         });
 
 

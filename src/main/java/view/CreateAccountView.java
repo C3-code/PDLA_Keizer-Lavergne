@@ -15,7 +15,7 @@ public class CreateAccountView extends JFrame{
 
     public void showSubscriptionField()  {
         setTitle("Create Account");
-        setSize(400, 350);
+        setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Panel pour le formulaire
@@ -51,9 +51,20 @@ public class CreateAccountView extends JFrame{
         // Bouton pour soumettre le formulaire
         JButton submitButton = new JButton("Submit");
         submitButton.addActionListener(e -> {
+            String mail = emailField.getText();
             try {
-                submitForm();
-                JOptionPane.showMessageDialog(formPanel, "Subscription saved successfully");
+                if (mail.isEmpty()) { //Si le champs "mail" n'est pas rempli
+                    JOptionPane.showMessageDialog(formPanel, "Veuillez entrer une adresse mail");
+                } else if (GestionBdd.getInstance().userExists(mail)) { // si le mail n'est pas valide
+                    JOptionPane.showMessageDialog(formPanel, "Adresse déjà utilisée. Veuillez vous connecter.");
+                    emailField.setText("");//reinitialiser le champ
+                } else { //Si le mail est correct
+                    //Traiter la participation à la mission
+                    submitForm();
+                    JOptionPane.showMessageDialog(formPanel, "Subscription saved successfully");
+                    setVisible(false);
+                    emailField.setText(""); // Réinitialiser le champ "numéro de mission" après soumission
+                }
             } catch (SQLException ex) {
                 System.out.println("Error submitting the form.");
                 JOptionPane.showMessageDialog(formPanel, "Error submitting the form.");
@@ -90,6 +101,6 @@ public class CreateAccountView extends JFrame{
 
         // Remarque : Le contrôleur va récupérer ces données et créer l'utilisateur
         System.out.println("Form submitted with data: " + firstName + " " + lastName+ " "+email);
-        //UserConnection.showConnectionView();
+        UserConnection.showConnectionView();
     }
 }

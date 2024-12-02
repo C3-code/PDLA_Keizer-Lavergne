@@ -9,7 +9,7 @@ import controller.*;
 public class WelcomeView extends JFrame {
 
     // Constructeur pour initialiser l'interface graphique
-    public static void createWelcomeView() {
+    public static void showWelcomeView() {
         // Create and set up the window.
         JFrame frame = new JFrame("Help App");
         frame.setSize(400, 250); // Taille de la fenêtre

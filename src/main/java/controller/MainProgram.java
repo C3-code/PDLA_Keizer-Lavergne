@@ -29,7 +29,7 @@ public class MainProgram {
         //base.printMissions();
 
         // Lancer l'application dans le thread de l'interface graphique
-        SwingUtilities.invokeLater(WelcomeView::createWelcomeView);
+        SwingUtilities.invokeLater(WelcomeView::showWelcomeView);
 
         //Test appel fenêtre volontaire
         //SwingUtilities.invokeLater(VolunteerView::showVolunteerView);

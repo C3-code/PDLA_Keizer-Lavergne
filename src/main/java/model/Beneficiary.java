@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 import static controller.MainProgram.base;
+import static controller.UserConnection.thisUser;
 
 /*Classe destinée a la gestion des utilisateurs qui demandent de l'aide */
 public class Beneficiary extends User {
@@ -41,12 +42,12 @@ public class Beneficiary extends User {
                 case "yes":
                     System.out.println("Who is your health professional ?");
                     String healthPro = sc.nextLine();
-                    mission = new Mission(missionName,description,expirationDate,location,healthPro);
+                    mission = new Mission(thisUser.getName(),description,expirationDate,location,healthPro);
                     base.addMission(this.getName(),mission);
                     answerOk = true;
                     break;
                 case "no":
-                    mission = new Mission(missionName,description,expirationDate,location);
+                    mission = new Mission(thisUser.getName(),missionName,description,expirationDate,location);
                     base.addMission(this.getName(),mission);
                     answerOk = true;
                     break;

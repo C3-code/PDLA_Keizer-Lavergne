@@ -4,7 +4,8 @@ import model.*;
 import view.*;
 import java.sql.SQLException;
 
-
+import static controller.MainProgram.base;
+import static controller.MainProgram.main;
 
 
 public class UserConnection {
@@ -88,5 +89,21 @@ public class UserConnection {
         }
 
     }
+
+    /*public static void createComment(int missionId, String comment, String destinataire) throws SQLException {
+
+        Mission mission = MainProgram.base.getMissionFromId(missionId);
+        Avis avis;
+
+        if (thisUser.getType().equals("BENEFICIARY")) {
+            avis = new Avis(mission.getMissionName(), missionId, mission.getDate(), comment, destinataire);
+        }
+        else {
+            avis = new Avis(mission.getMissionName(), missionId, mission.getDate(), comment, mission.getBeneficiary());
+        }
+
+        MainProgram.base.addComment(avis);
+
+    }*/
 
 }

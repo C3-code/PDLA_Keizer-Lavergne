@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae176f28-9f3a-4ac6-b87f-d7e39ed827b3" name="Changes" comment="MAJ">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Avis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/GestionBdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GestionBdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MissionCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MissionCreation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Beneficiary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Beneficiary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Mission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Mission.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/BeneficiaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BeneficiaryView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ConnectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ConnectionView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/CreateAccountView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateAccountView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/VolunteerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/VolunteerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/WelcomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/WelcomeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

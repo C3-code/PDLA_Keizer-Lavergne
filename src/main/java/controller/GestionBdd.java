@@ -322,6 +322,58 @@ public class GestionBdd{
         }
     }
 
+    public boolean missionExists(int id) throws SQLException {
+        String query = "SELECT * FROM Missions WHERE id = ?";
+        try (PreparedStatement stmt = this.conn.prepareStatement(query)) {
+            stmt.setInt(1, id);  // Set the email as a parameter
+            ResultSet result = stmt.executeQuery();
+
+            if (result.next()) {  // Check if there is a row
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public void createCommentFromMissionId(int id) throws SQLException {
+
+        //par la suite faire un if pour differencier getcurrent missions d'un volontaire et d'un beneficiare
+        // Utilisation d'un PreparedStatement pour la requête avec paramètre
+        String query = "SELECT * FROM Missions WHERE id = ? ;";
+
+        try (PreparedStatement statement = this.conn.prepareStatement(query)) {
+
+            // Lier le paramètre (l'email de l'utilisateur)
+            statement.setInt(1, id);
+
+            /* Construction du catalogue des missions depuis les informations de la base de données */
+            ResultSet result = statement.executeQuery();
+            String beneficiary = result.getString("beneficiary");
+            String nomMission = result.getString("missionName");
+            String description = result.getString("description");
+            String date = result.getString("expirationDate");
+            //String location = result.getString("location");
+            String volunteer = result.getString("volunteer");
+
+
+            Avis avis;
+
+            if (thisUser.getType().equals("BENEFICIARY")) {
+                avis = new Avis(nomMission,id,date,description,volunteer);
+            }
+            else {
+                avis = new Avis(nomMission,id,date,description,beneficiary);
+            }
+
+            MainProgram.base.addComment(avis);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            throw ex;
+        }
+    }
+
     public void addComment(Avis avis) throws SQLException {
         query = "INSERT INTO Avis(utilisateur,missionId,missionName,commentDate,destinataire,commentaire) VALUES (?, ?,?, ?, ?, ?)";
 

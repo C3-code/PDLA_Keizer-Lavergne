@@ -8,6 +8,8 @@ public class Mission {
 
     private String healthPro;
 
+    private String beneficiary;
+
     /** Pour une mission plusieurs états sont possibles
      *
      */
@@ -15,7 +17,8 @@ public class Mission {
 
 
 
-    public Mission(String missionName, String description, String date, String location, String healthPro) {
+    public Mission(String beneficiary, String missionName, String description, String date, String location, String healthPro) {
+        this.beneficiary = beneficiary;
         this.missionName = missionName;
         this.description = description;
         this.date = date;
@@ -23,7 +26,8 @@ public class Mission {
         this.healthPro = healthPro;
     }
 
-    public Mission(String missionName, String description, String date, String location) {
+    public Mission(String beneficiary, String missionName, String description, String date, String location) {
+        this.beneficiary = beneficiary;
         this.missionName = missionName;
         this.description = description;
         this.date = date;
@@ -33,6 +37,8 @@ public class Mission {
 
 
     /************GETTERS***************/
+
+    public String getBeneficiary() {return beneficiary;}
     public String getMissionName() {
         return missionName;
     }

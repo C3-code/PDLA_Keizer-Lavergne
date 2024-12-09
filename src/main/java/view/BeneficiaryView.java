@@ -41,10 +41,12 @@ public class BeneficiaryView extends JFrame {
         JButton catalogButton = new JButton("My posted missions");
         JButton currentMissionsButton = new JButton("My accepted missions");
         JButton previousMissionsButton = new JButton("My previous missions");
+        JButton commentsButton = new JButton("Comments left");
 
         buttonPanel.add(catalogButton);
         buttonPanel.add(currentMissionsButton);
         buttonPanel.add(previousMissionsButton);
+        buttonPanel.add(commentsButton);
 
         panel.add(buttonPanel);
 
@@ -124,6 +126,16 @@ public class BeneficiaryView extends JFrame {
                 throw new RuntimeException(ex);
             }
             textArea.setText(previousMissions);
+        });
+
+        commentsButton.addActionListener(e -> {
+            String comments = null;
+            try {
+                comments = GestionBdd.getInstance().getComments();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+            textArea.setText(comments);
         });
 
 
@@ -245,7 +257,7 @@ public class BeneficiaryView extends JFrame {
         missionFormDialog.setVisible(true);
     }
 
-    private static void showCommentCreationForm() {
+    static void showCommentCreationForm() {
         // Créer une fenêtre de type JDialog
         JDialog missionFormDialog = new JDialog();
         missionFormDialog.setTitle("Leave a comment");
@@ -278,7 +290,7 @@ public class BeneficiaryView extends JFrame {
                     JOptionPane.showMessageDialog(missionFormDialog, "Please fill in all fields and chose a valid mission id.");
                 } else {
                     try {
-                        MainProgram.base.createCommentFromMissionId(missionId);
+                        MainProgram.base.createCommentFromMissionId(commentDescription,missionId);
                         JOptionPane.showMessageDialog(missionFormDialog, "Comment left successfully!");
                         missionFormDialog.dispose(); // Fermer la fenêtre une fois la mission soumise
                     } catch (SQLException ex) {

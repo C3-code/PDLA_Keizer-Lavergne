@@ -7,6 +7,7 @@ import controller.*;
 import model.User;
 
 import static java.lang.Integer.decode;
+import static view.BeneficiaryView.showCommentCreationForm;
 import static view.WelcomeView.showWelcomeView;
 
 public class VolunteerView extends JFrame {
@@ -134,6 +135,16 @@ public class VolunteerView extends JFrame {
             }
 
         });
+        JPanel leaveCommentPanel = new JPanel();
+        leaveCommentPanel.setLayout(new BoxLayout(leaveCommentPanel, BoxLayout.Y_AXIS)); // Disposition verticale
+        leaveCommentPanel.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrer le panel
+
+        JButton LeaveCommentButton = new JButton("Leave a comment");
+        leaveCommentPanel.add(LeaveCommentButton);
+
+        LeaveCommentButton.addActionListener(e -> showCommentCreationForm());
+
+        panel.add(leaveCommentPanel);
 
         disconnectButton.addActionListener(e -> {
             showWelcomeView();

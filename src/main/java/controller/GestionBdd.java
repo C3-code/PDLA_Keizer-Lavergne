@@ -6,6 +6,7 @@ import model.User;
 
 import java.sql.*;
 import java.util.Objects;
+import java.util.Scanner;
 
 import static controller.UserConnection.thisUser;
 
@@ -336,7 +337,7 @@ public class GestionBdd{
         }
     }
 
-    public void createCommentFromMissionId(int id) throws SQLException {
+    public void createCommentFromMissionId(String comment, int id) throws SQLException {
 
         //par la suite faire un if pour differencier getcurrent missions d'un volontaire et d'un beneficiare
         // Utilisation d'un PreparedStatement pour la requête avec paramètre
@@ -349,24 +350,28 @@ public class GestionBdd{
 
             /* Construction du catalogue des missions depuis les informations de la base de données */
             ResultSet result = statement.executeQuery();
-            String beneficiary = result.getString("beneficiary");
-            String nomMission = result.getString("missionName");
-            String description = result.getString("description");
-            String date = result.getString("expirationDate");
-            //String location = result.getString("location");
-            String volunteer = result.getString("volunteer");
+
+            if (result.next()) {
+                String beneficiary = result.getString("beneficiary");
+                String nomMission = result.getString("missionName");
+                //String description = result.getString("description");
+                String date = result.getString("expirationDate");
+                //String location = result.getString("location");
+                String volunteer = result.getString("volunteer");
 
 
-            Avis avis;
+                Avis avis;
 
-            if (thisUser.getType().equals("BENEFICIARY")) {
-                avis = new Avis(nomMission,id,date,description,volunteer);
+                if (thisUser.getType().equals("BENEFICIARY")) {
+                    avis = new Avis(nomMission, id, date, comment, volunteer);
+                } else {
+                    avis = new Avis(nomMission, id, date, comment, beneficiary);
+                }
+
+                MainProgram.base.addComment(avis);
+            } else {
+                throw new SQLException("Mission with id" + id + "not found.");
             }
-            else {
-                avis = new Avis(nomMission,id,date,description,beneficiary);
-            }
-
-            MainProgram.base.addComment(avis);
 
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -375,12 +380,12 @@ public class GestionBdd{
     }
 
     public void addComment(Avis avis) throws SQLException {
-        query = "INSERT INTO Avis(utilisateur,missionId,missionName,commentDate,destinataire,commentaire) VALUES (?, ?,?, ?, ?, ?)";
+        query = "INSERT INTO Avis(idMissionn, utilisateur,missionName,commentDate,destinataire,commentaire) VALUES (?, ?,?, ?, ?, ?)";
 
         try (PreparedStatement statement = this.conn.prepareStatement(query)) {
             // Remplir les paramètres de la requête avec les valeurs de l'utilisateur
-            statement.setString(1, thisUser.getName());
-            statement.setInt(2, avis.getMissionId());
+            statement.setInt(1, avis.getMissionId());
+            statement.setString(2, thisUser.getName());
             statement.setString(3, avis.getMissionName());
             statement.setString(4, avis.getCommentDate());
             statement.setString(5, avis.getDestinataire());
@@ -393,6 +398,34 @@ public class GestionBdd{
             e.printStackTrace();
             throw e;  // Propager l'exception après l'avoir affichée
         }
+    }
+
+    public String getComments() throws SQLException {
+        ResultSet result;
+        String query;
+
+        query = "SELECT * FROM Avis WHERE (destinataire = ?);";
+        PreparedStatement preparedStatement = this.conn.prepareStatement(query);
+        preparedStatement.setString(1, thisUser.getName());
+
+        // Exécution de la requête
+        result = preparedStatement.executeQuery();
+
+
+        String texte = "----------------------------------------------- Comments left ------------------------------------------------------------\n";
+        while(result.next()) {
+            final int id = result.getInt("idMissionn");
+            final String userName = result.getString("utilisateur");
+            final String mission = result.getString("missionName");
+            final String commentaire = result.getString("commentaire");
+            final String date = result.getString("commentDate");
+
+            texte = texte + "-----------------------------------------------------------------------------------------------------------------------------------------------\n"
+                    + "A comment was left for you regarding mission " +id +" : "+ mission + "\n"
+                    +"       [" + userName + " wrote] : "+commentaire  + "\n"
+                    +"       Date : " + date + "\n";
+        }
+        return texte;
     }
 
 

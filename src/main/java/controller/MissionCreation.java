@@ -11,7 +11,7 @@ import static controller.UserConnection.thisUser;
 public class MissionCreation {
 
 
-    public static void createMission(String name, String description, String date, String location, String healthPro) throws SQLException {
+    public static Mission createMission(String name, String description, String date, String location, String healthPro) throws SQLException {
         Mission mission;
         if (healthPro.equals("yes")){ //il faudra gérer le cas où y a un superviseur justement
             mission = new Mission(thisUser.getMail(), name, description, date, location, "healthPro");
@@ -19,7 +19,10 @@ public class MissionCreation {
         else {
             mission = new Mission(thisUser.getMail(), name, description, date, location);
         }
-        base.addMission(thisUser.getMail(), mission);
+        return mission;
+    }
 
+    public static void saveMission(Mission mission) throws SQLException {
+        base.addMission(thisUser.getMail(), mission);
     }
 }

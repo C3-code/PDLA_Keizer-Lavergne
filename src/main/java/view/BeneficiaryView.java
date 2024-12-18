@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.Objects;
 
 import controller.*;
+import model.Avis;
 import model.Mission;
 import model.User;
 
@@ -242,7 +243,8 @@ public class BeneficiaryView extends JFrame {
                 try {
                     // Appeler une méthode de la classe GestionBdd pour enregistrer la mission
                     // Exemple : GestionBdd.getInstance().createMission(missionName, missionDescription, missionDate, missionType);
-                    MissionCreation.createMission(missionName, missionDescription, missionDate, missionLocation, healthPro);
+                    Mission mission = MissionCreation.createMission(missionName, missionDescription, missionDate, missionLocation, healthPro);
+                    MissionCreation.saveMission(mission);
                     JOptionPane.showMessageDialog(missionFormDialog, "Mission created successfully!");
                     missionFormDialog.dispose(); // Fermer la fenêtre une fois la mission soumise
                 } catch (SQLException ex) {
@@ -290,7 +292,9 @@ public class BeneficiaryView extends JFrame {
                     JOptionPane.showMessageDialog(missionFormDialog, "Please fill in all fields and chose a valid mission id.");
                 } else {
                     try {
-                        CommentCreation.createCommentFromMission(commentDescription,missionId);
+                        Mission commentedMission = GestionBdd.getInstance().getMissionFromId(missionId);
+                        Avis avis = CommentCreation.createCommentFromMission(commentDescription,commentedMission,missionId);
+                        CommentCreation.saveComment(avis);
                         JOptionPane.showMessageDialog(missionFormDialog, "Comment left successfully!");
                         missionFormDialog.dispose(); // Fermer la fenêtre une fois la mission soumise
                     } catch (SQLException ex) {

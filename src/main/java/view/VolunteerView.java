@@ -30,10 +30,12 @@ public class VolunteerView extends JFrame {
         JButton catalogButton = new JButton("Catalog of available missions");
         JButton currentMissionsButton = new JButton("My current missions");
         JButton previousMissionsButton = new JButton("My previous missions");
+        JButton commentsButton = new JButton("Comments left on me");
 
         buttonPanel.add(catalogButton);
         buttonPanel.add(currentMissionsButton);
         buttonPanel.add(previousMissionsButton);
+        buttonPanel.add(commentsButton);
 
         panel.add(buttonPanel);
 
@@ -113,6 +115,16 @@ public class VolunteerView extends JFrame {
                 throw new RuntimeException(ex);
             }
             textArea.setText(previousMissions);
+        });
+
+        commentsButton.addActionListener(e -> {
+            String comments = null;
+            try {
+                comments = GestionBdd.getInstance().getComments();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+            textArea.setText(comments);
         });
 
         // ActionListener pour le bouton "Soumettre la demande"

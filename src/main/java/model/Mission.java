@@ -10,6 +10,8 @@ public class Mission {
 
     private String beneficiary;
 
+    private String volunteer;
+
     /** Pour une mission plusieurs états sont possibles
      *
      */
@@ -24,6 +26,7 @@ public class Mission {
         this.date = date;
         this.location = location;
         this.healthPro = healthPro;
+        this.volunteer = "none";
     }
 
     public Mission(String beneficiary, String missionName, String description, String date, String location) {
@@ -32,11 +35,16 @@ public class Mission {
         this.description = description;
         this.date = date;
         this.location = location;
+        this.volunteer = "none";
     }
 
 
 
     /************GETTERS***************/
+
+    public void updateVolunteer(String volunteer) {
+        this.volunteer = volunteer;
+    }
 
     public String getBeneficiary() {return beneficiary;}
     public String getMissionName() {
@@ -57,5 +65,9 @@ public class Mission {
 
     public String getHealthPro() {
         return healthPro;
+    }
+
+    public String getVolunteer() {
+        return volunteer;
     }
 }

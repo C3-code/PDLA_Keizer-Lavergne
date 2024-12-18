@@ -41,7 +41,7 @@ public class BeneficiaryView extends JFrame {
         JButton catalogButton = new JButton("My posted missions");
         JButton currentMissionsButton = new JButton("My accepted missions");
         JButton previousMissionsButton = new JButton("My previous missions");
-        JButton commentsButton = new JButton("Comments left");
+        JButton commentsButton = new JButton("Comments left on me");
 
         buttonPanel.add(catalogButton);
         buttonPanel.add(currentMissionsButton);
@@ -290,7 +290,7 @@ public class BeneficiaryView extends JFrame {
                     JOptionPane.showMessageDialog(missionFormDialog, "Please fill in all fields and chose a valid mission id.");
                 } else {
                     try {
-                        MainProgram.base.createCommentFromMissionId(commentDescription,missionId);
+                        CommentCreation.createCommentFromMission(commentDescription,missionId);
                         JOptionPane.showMessageDialog(missionFormDialog, "Comment left successfully!");
                         missionFormDialog.dispose(); // Fermer la fenêtre une fois la mission soumise
                     } catch (SQLException ex) {

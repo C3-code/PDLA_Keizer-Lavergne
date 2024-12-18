@@ -14,12 +14,12 @@ public class MissionCreation {
     public static void createMission(String name, String description, String date, String location, String healthPro) throws SQLException {
         Mission mission;
         if (healthPro.equals("yes")){ //il faudra gérer le cas où y a un superviseur justement
-            mission = new Mission(thisUser.getName(), name, description, date, location, "healthPro");
+            mission = new Mission(thisUser.getMail(), name, description, date, location, "healthPro");
         }
         else {
-            mission = new Mission(thisUser.getName(), name, description, date, location);
+            mission = new Mission(thisUser.getMail(), name, description, date, location);
         }
-        base.addMission(thisUser.getName(), mission);
+        base.addMission(thisUser.getMail(), mission);
 
     }
 }

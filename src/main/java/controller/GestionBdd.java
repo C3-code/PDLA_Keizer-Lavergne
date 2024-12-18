@@ -103,7 +103,7 @@ public class GestionBdd{
         }
     }
 
-    public void addMission(String name, Mission mission) throws SQLException {
+    public void addMission(String mail, Mission mission) throws SQLException {
 
         //Statement statement = this.conn.createStatement();
 
@@ -111,14 +111,14 @@ public class GestionBdd{
 
         try (PreparedStatement statement = this.conn.prepareStatement(query)) {
             // Remplir les paramètres de la requête avec les valeurs de l'utilisateur
-            statement.setString(1, name);
+            statement.setString(1, mail);
             statement.setString(2, mission.getMissionName());
             statement.setString(3, mission.getDescription());
             statement.setString(4, mission.getDate());
             statement.setString(5, mission.getLocation());
             statement.setString(6, mission.getHealthPro());
             statement.setString(7, "open");
-            statement.setString(8, "none" );
+            statement.setString(8, mission.getVolunteer());
 
             // Exécution de la requête
             statement.executeUpdate();
@@ -145,7 +145,7 @@ public class GestionBdd{
 
             // Utilisation d'un PreparedStatement pour passer le paramètre
             PreparedStatement preparedStatement = this.conn.prepareStatement(query);
-            preparedStatement.setString(1, thisUser.getName());
+            preparedStatement.setString(1, thisUser.getMail());
 
             // Exécution de la requête
             result = preparedStatement.executeQuery();
@@ -188,7 +188,7 @@ public class GestionBdd{
 
             // Création d'un PreparedStatement
             preparedStatement = this.conn.prepareStatement(query);
-            preparedStatement.setString(1, thisUser.getName());
+            preparedStatement.setString(1, thisUser.getMail());
 
             // Exécution de la requête
         } else {
@@ -234,7 +234,7 @@ public class GestionBdd{
 
             // Création d'un PreparedStatement
             preparedStatement = this.conn.prepareStatement(query);
-            preparedStatement.setString(1, thisUser.getName());
+            preparedStatement.setString(1, thisUser.getMail());
 
             // Exécution de la requête
         } else {
@@ -337,8 +337,7 @@ public class GestionBdd{
         }
     }
 
-    public void createCommentFromMissionId(String comment, int id) throws SQLException {
-
+    public Mission getMissionFromId(int id) throws SQLException {
         //par la suite faire un if pour differencier getcurrent missions d'un volontaire et d'un beneficiare
         // Utilisation d'un PreparedStatement pour la requête avec paramètre
         String query = "SELECT * FROM Missions WHERE id = ? ;";
@@ -349,6 +348,41 @@ public class GestionBdd{
             statement.setInt(1, id);
 
             /* Construction du catalogue des missions depuis les informations de la base de données */
+            ResultSet result = statement.executeQuery();
+
+            if (result.next()) {
+                String beneficiary = result.getString("beneficiary");
+                String nomMission = result.getString("missionName");
+                String description = result.getString("description");
+                String date = result.getString("expirationDate");
+                String location = result.getString("location");
+                String volunteer = result.getString("volunteer");
+                Mission mission = new Mission(beneficiary,nomMission,description,date,location);
+                mission.updateVolunteer(volunteer);
+
+                return mission;
+
+            } else {
+                throw new SQLException("Mission with id" + id + "not found.");
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            throw ex;
+        }
+    }
+    /*public void createCommentFromMissionId(String comment, int id) throws SQLException {
+
+        //par la suite faire un if pour differencier getcurrent missions d'un volontaire et d'un beneficiare
+        // Utilisation d'un PreparedStatement pour la requête avec paramètre
+        String query = "SELECT * FROM Missions WHERE id = ? ;";
+
+        try (PreparedStatement statement = this.conn.prepareStatement(query)) {
+
+            // Lier le paramètre (l'email de l'utilisateur)
+            statement.setInt(1, id);
+
+            //Construction du catalogue des missions depuis les informations de la base de données
             ResultSet result = statement.executeQuery();
 
             if (result.next()) {
@@ -377,7 +411,7 @@ public class GestionBdd{
             ex.printStackTrace();
             throw ex;
         }
-    }
+    }*/
 
     public void addComment(Avis avis) throws SQLException {
         query = "INSERT INTO Avis(idMissionn, utilisateur,missionName,commentDate,destinataire,commentaire) VALUES (?, ?,?, ?, ?, ?)";
@@ -385,7 +419,7 @@ public class GestionBdd{
         try (PreparedStatement statement = this.conn.prepareStatement(query)) {
             // Remplir les paramètres de la requête avec les valeurs de l'utilisateur
             statement.setInt(1, avis.getMissionId());
-            statement.setString(2, thisUser.getName());
+            statement.setString(2, thisUser.getMail());
             statement.setString(3, avis.getMissionName());
             statement.setString(4, avis.getCommentDate());
             statement.setString(5, avis.getDestinataire());
@@ -406,7 +440,7 @@ public class GestionBdd{
 
         query = "SELECT * FROM Avis WHERE (destinataire = ?);";
         PreparedStatement preparedStatement = this.conn.prepareStatement(query);
-        preparedStatement.setString(1, thisUser.getName());
+        preparedStatement.setString(1, thisUser.getMail());
 
         // Exécution de la requête
         result = preparedStatement.executeQuery();

@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 
+import static controller.MainProgram.base;
+
 public class Volunteer extends User {
 
     /***********Constructeur
@@ -24,10 +26,11 @@ public class Volunteer extends User {
     private List<Mission> previousMissions;
     //Add function AcceptMission (id mission) -> transform state -> 0
     //ajouter la mission a la liste de missions du volunteer
-    public void acceptMission(int idMission) throws SQLException {
-        GestionBdd.getInstance().participateInMission(idMission, this.getName());
+    /*public void acceptMission(int idMission) throws SQLException {
+        base.getMissionFromId(idMission).updateVolunteer(this.getMail());
+        GestionBdd.getInstance().participateInMission(idMission, this.getMail());
         System.out.println("La mission a bien été acceptée");
-    }
+    }*/
 
     /*public void printCurrentMission () throws SQLException {
         GestionBdd.getInstance().getCurrentMissions(this);

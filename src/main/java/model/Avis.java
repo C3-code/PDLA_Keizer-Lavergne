@@ -28,7 +28,7 @@ public class Avis {
         return commentDate;
     }
 
-    public String getCommentaire() {
+    public String getComment() {
         return commentaire;
     }
 

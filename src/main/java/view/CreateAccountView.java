@@ -1,5 +1,6 @@
 package view;
 import controller.*;
+import model.User;
 
 import javax.swing.*;
 import java.sql.SQLException;
@@ -97,7 +98,8 @@ public class CreateAccountView extends JFrame{
 
         // Appeler la méthode du contrôleur pour traiter ces données
         //assert role != null;
-        UserConnection.createUser(firstName,lastName,birthDate,email,phoneNumber,role);
+        User user = UserConnection.setUpUser(firstName,lastName,birthDate,email,phoneNumber,role);
+        MainProgram.base.addPerson(user);
 
         // Remarque : Le contrôleur va récupérer ces données et créer l'utilisateur
         System.out.println("Form submitted with data: " + firstName + " " + lastName+ " "+email);

@@ -423,7 +423,7 @@ public class GestionBdd{
             statement.setString(3, avis.getMissionName());
             statement.setString(4, avis.getCommentDate());
             statement.setString(5, avis.getDestinataire());
-            statement.setString(6, avis.getCommentaire());
+            statement.setString(6, avis.getComment());
 
             // Exécution de la requête
             statement.executeUpdate();

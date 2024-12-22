@@ -18,7 +18,7 @@ public class UserConnection {
     }
 
 
-    public static void createUser(String firstName, String name, String birthDate, String mail, String phoneNumber, String role) throws SQLException {
+    /*public static void createUser(String firstName, String name, String birthDate, String mail, String phoneNumber, String role) throws SQLException {
             //Creation en local (notre instance de user)
             switch (role) {
                 case "BENEFICIARY":
@@ -38,12 +38,12 @@ public class UserConnection {
                     System.out.println("Please rewrite your role, we didn't understand");
             }
 
-            /***Add it in the database***/
+
             GestionBdd.getInstance().addPerson(thisUser);
             System.out.println("You are now registered as a new user !");
-    }
+    }*/
 
-    public static void setUpUser(String firstName, String name, String birthDate, String mail, String phoneNumber, String role) throws SQLException {
+    public static User setUpUser(String firstName, String name, String birthDate, String mail, String phoneNumber, String role) throws SQLException {
         switch (role) {
             case "BENEFICIARY":
                 thisUser = new Beneficiary(firstName, name, birthDate, mail, phoneNumber, User.TypeUser.BENEFICIARY);
@@ -54,11 +54,14 @@ public class UserConnection {
             case "HEALTHPRO":
                 thisUser  = new HealthPro(firstName, name, birthDate, mail, phoneNumber, User.TypeUser.HEALTHPRO);
                 break;
-            case "ADMIN":
+            case "ADMIN": // Useless here
                 thisUser  = new Admin(firstName, name, birthDate, mail, phoneNumber, User.TypeUser.ADMIN);
                 break;
+            default:
+                throw new RuntimeException();
         }
-        System.out.println("Infos retrouvees: nom: "+ thisUser.getName()+" mail: "+thisUser.getMail() + "role: " +thisUser.getType());
+        return thisUser;
+        //System.out.println("Infos retrouvees: nom: "+ thisUser.getName()+" mail: "+thisUser.getMail() + "role: " +thisUser.getType());
     }
 
     public static void showConnectionView() {
@@ -69,7 +72,7 @@ public class UserConnection {
     public static void connectUser(String mail) throws SQLException {
         boolean exists = GestionBdd.getInstance().userExists(mail);
         if (!exists) {
-            System.out.println("l'utilisateur existe pas chacal");
+            System.out.println("l'utilisateur n'existe pas");
         }
         else {
             System.out.println("Connection with email address: " + mail);
@@ -86,21 +89,5 @@ public class UserConnection {
         }
 
     }
-
-    /*public static void createComment(int missionId, String comment, String destinataire) throws SQLException {
-
-        Mission mission = MainProgram.base.getMissionFromId(missionId);
-        Avis avis;
-
-        if (thisUser.getType().equals("BENEFICIARY")) {
-            avis = new Avis(mission.getMissionName(), missionId, mission.getDate(), comment, destinataire);
-        }
-        else {
-            avis = new Avis(mission.getMissionName(), missionId, mission.getDate(), comment, mission.getBeneficiary());
-        }
-
-        MainProgram.base.addComment(avis);
-
-    }*/
 
 }

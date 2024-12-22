@@ -22,7 +22,4 @@ public class MissionCreation {
         return mission;
     }
 
-    public static void saveMission(Mission mission) throws SQLException {
-        base.addMission(thisUser.getMail(), mission);
-    }
 }

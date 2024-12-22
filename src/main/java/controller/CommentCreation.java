@@ -21,8 +21,8 @@ public class CommentCreation {
 
     }
 
-    public static void saveComment(Avis avis) throws SQLException {
+    /*public static void saveComment(Avis avis) throws SQLException {
         MainProgram.base.addComment(avis);
-    }
+    }*/
 
 }

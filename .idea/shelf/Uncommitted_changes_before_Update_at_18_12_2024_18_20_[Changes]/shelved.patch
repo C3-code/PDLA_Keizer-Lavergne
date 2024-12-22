@@ -1,0 +1,360 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"ae176f28-9f3a-4ac6-b87f-d7e39ed827b3\" name=\"Changes\" comment=\"MAJ\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/controller/GestionBdd.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/controller/GestionBdd.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/view/BeneficiaryView.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/view/BeneficiaryView.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/view/VolunteerView.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/view/VolunteerView.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;customColor&quot;: &quot;&quot;,\n  &quot;associatedIndex&quot;: 7\n}</component>\n  <component name=\"ProjectId\" id=\"2nW3PYeDwYlRCRhB6NomBXoMXfD\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/home/keizer/4A_IR/PDLA/PDLA_Keizer-Lavergne&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.testRunning&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n      <recent name=\"org.example\" />\n      <recent name=\"\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Application.MainProgram\">\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"17 (2)\" />\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"org.example.Main\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"model.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"MainProgram\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"17\" />\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"controller.MainProgram\" />\n      <module name=\"PDLA_Keizer-Lavergne\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"model.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Test\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"Test\" />\n      <module name=\"PDLA_Keizer-Lavergne\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"VolunteerView\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"view.VolunteerView\" />\n      <module name=\"PDLA_Keizer-Lavergne\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"view.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.VolunteerView\" />\n        <item itemvalue=\"Application.Test\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"ae176f28-9f3a-4ac6-b87f-d7e39ed827b3\" name=\"Changes\" comment=\"\" />\n      <created>1728921991223</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1728921991223</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"First commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1728922334822</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1728922334822</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"MAJ\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1729075193410</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1729075193410</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"3\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"First commit\" />\n    <MESSAGE value=\"MAJ\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"MAJ\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,10 +5,11 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="ae176f28-9f3a-4ac6-b87f-d7e39ed827b3" name="Changes" comment="MAJ">
++      <change afterPath="$PROJECT_DIR$/src/test/java/controller/GestionBddTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/test/java/controller/MissionCreationTest.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/GestionBdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GestionBdd.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/view/BeneficiaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BeneficiaryView.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/view/VolunteerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/VolunteerView.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/model/Beneficiary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Beneficiary.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -18,6 +19,7 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
++        <option value="JUnit3 Test Class" />
+         <option value="Class" />
+       </list>
+     </option>
+@@ -35,26 +37,34 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;/home/keizer/4A_IR/PDLA/PDLA_Keizer-Lavergne&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.testRunning&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
++    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
++    "git-widget-placeholder": "writing__tests",
++    "last_opened_file_path": "/home/keizer/4A_IR/PDLA/PDLA_Keizer-Lavergne",
++    "project.structure.last.edited": "Project",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0",
++    "settings.editor.selected.configurable": "reference.settings.project.maven.testRunning"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
++    <key name="CreateTestDialog.Recents.Supers">
++      <recent name="junit.framework.TestCase" />
++    </key>
+     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+       <recent name="org.example" />
+       <recent name="" />
++    </key>
++    <key name="CreateTestDialog.RecentsKey">
++      <recent name="controller" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.MainProgram">
++  <component name="RunManager" selected="JUnit.GestionBddTest.testConnexionBDD">
+     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+       <option name="ALTERNATIVE_JRE_PATH" value="17 (2)" />
+       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+@@ -104,8 +114,42 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
++    <configuration name="GestionBddTest.testAddPerson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="PDLA_Keizer-Lavergne" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="controller.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="controller" />
++      <option name="MAIN_CLASS_NAME" value="controller.GestionBddTest" />
++      <option name="METHOD_NAME" value="testAddPerson" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="GestionBddTest.testConnexionBDD" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="PDLA_Keizer-Lavergne" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="controller.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="controller" />
++      <option name="MAIN_CLASS_NAME" value="controller.GestionBddTest" />
++      <option name="METHOD_NAME" value="testConnexionBDD" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="JUnit.GestionBddTest.testConnexionBDD" />
++        <item itemvalue="JUnit.GestionBddTest.testAddPerson" />
+         <item itemvalue="Application.VolunteerView" />
+         <item itemvalue="Application.Test" />
+       </list>
+Index: src/main/java/model/Beneficiary.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package model;\n\nimport java.sql.SQLException;\nimport java.util.Date;\nimport java.util.Scanner;\n\nimport static controller.MainProgram.base;\nimport static controller.UserConnection.thisUser;\n\n/*Classe destinée a la gestion des utilisateurs qui demandent de l'aide */\npublic class Beneficiary extends User {\n\n    private Mission mission ;\n\n    /***********Constructeur\n     * @param firstName\n     * @param name\n     * @param birthDate\n     * @param mail\n     * @param phoneNumber\n     * @param type**********/\n    public Beneficiary(String firstName, String name, String birthDate, String mail, String phoneNumber, TypeUser type) {\n        super(firstName, name, birthDate, mail, phoneNumber, type);\n    }\n\n    public void createMission() throws SQLException {\n        Scanner sc = new Scanner(System.in);\n        System.out.println(\"Give a name to your mission :\");\n        String missionName = sc.nextLine();\n        System.out.println(\"Give a description to your mission :\");\n        String description = sc.nextLine();\n        System.out.println(\"What date do you want your mission to be realised\");\n        String expirationDate = sc.nextLine();\n        System.out.println(\"Where is your mission located ?\");\n        String location = sc.nextLine();\n\n        Boolean answerOk = false;\n        while(!answerOk) {\n            System.out.println(\"Do you have a health professional supervisor ? yes or no\");\n            String answer = sc.nextLine();\n            switch (answer) {\n                case \"yes\":\n                    System.out.println(\"Who is your health professional ?\");\n                    String healthPro = sc.nextLine();\n                    mission = new Mission(thisUser.getName(),description,expirationDate,location,healthPro);\n                    base.addMission(this.getName(),mission);\n                    answerOk = true;\n                    break;\n                case \"no\":\n                    mission = new Mission(thisUser.getName(),missionName,description,expirationDate,location);\n                    base.addMission(this.getName(),mission);\n                    answerOk = true;\n                    break;\n                default:\n                    System.out.println(\"Please rewrite your answer (yes or no), we didn't understand\");\n            }\n        }\n        sc.close();\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/model/Beneficiary.java b/src/main/java/model/Beneficiary.java
+--- a/src/main/java/model/Beneficiary.java	
++++ b/src/main/java/model/Beneficiary.java	
+@@ -23,7 +23,7 @@
+         super(firstName, name, birthDate, mail, phoneNumber, type);
+     }
+ 
+-    public void createMission() throws SQLException {
++    /*public void createMission() throws SQLException {
+         Scanner sc = new Scanner(System.in);
+         System.out.println("Give a name to your mission :");
+         String missionName = sc.nextLine();
+@@ -56,5 +56,5 @@
+             }
+         }
+         sc.close();
+-    }
++    }*/
+ }
+\ No newline at end of file
+Index: src/test/java/controller/GestionBddTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/controller/GestionBddTest.java b/src/test/java/controller/GestionBddTest.java
+new file mode 100644
+--- /dev/null	
++++ b/src/test/java/controller/GestionBddTest.java	
+@@ -0,0 +1,95 @@
++package controller;
++
++import controller.GestionBdd;
++import model.User;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++
++import java.sql.Connection;
++import java.sql.DriverManager;
++import java.sql.SQLException;
++import java.sql.Statement;
++
++import static model.User.TypeUser.BENEFICIARY;
++import static org.junit.jupiter.api.Assertions.*;
++
++class GestionBddTest {
++
++    private GestionBdd gestionBdd;
++    private Connection conn;
++    @BeforeEach
++    void setUp() throws SQLException {
++        Connection conn = null;
++
++        try{
++            conn =DriverManager.getConnection("jdbc:mysql://localhost");
++            Statement creation = conn.createStatement();
++            creation.execute("CREATE TABLE Individus (" +
++                    "id INT AUTO_INCREMENT PRIMARY KEY, " +
++                    "nom VARCHAR(255), " +
++                    "prenom VARCHAR(255), " +
++                    "mail VARCHAR(255), " +
++                    "numeroTelephone VARCHAR(255), " +
++                    "dateNaissance VARCHAR(255), " +
++                    "typeUser VARCHAR(255));");
++            gestionBdd = GestionBdd.getInstance();
++        } catch (SQLException e) {
++            System.err.println("Driver is not uploaded!");
++            e.printStackTrace();
++        }
++
++    }
++
++    @Test
++    void testConnexionBDD() throws SQLException {
++        // Tester si la connexion à la base de données en mémoire est réussie
++        assertNotNull(gestionBdd.conn);
++    }
++
++    @Test
++    void testAddPerson() throws SQLException {
++        // Créer un utilisateur à ajouter dans la base
++        User user = new User("John", "Doe", "johndoe@example.com", "123456789", "1990-01-01", BENEFICIARY);
++
++        // Appeler la méthode addPerson pour ajouter l'utilisateur
++        gestionBdd.addPerson(user);
++
++        // Vérifier si l'utilisateur est bien ajouté en interrogeant la base
++        String query = "SELECT * FROM Individus WHERE mail = 'johndoe@example.com';";
++        try (Statement stmt = conn.createStatement()) {
++            var resultSet = stmt.executeQuery(query);
++            assertTrue(resultSet.next());  // L'utilisateur devrait être trouvé
++            assertEquals("John", resultSet.getString("nom"));
++            assertEquals("Doe", resultSet.getString("prenom"));
++        }
++    }
++
++    @Test
++    void testUserExists_ReturnTrue_WhenUserExists() throws SQLException {
++        // Créer un utilisateur à ajouter dans la base
++        User user = new User("John", "Doe", "johndoe@example.com", "123456789", "1990-01-01", BENEFICIARY);
++        gestionBdd.addPerson(user);
++
++        // Tester la méthode userExists pour vérifier si l'utilisateur existe
++        boolean exists = gestionBdd.userExists("johndoe@example.com");
++
++        assertTrue(exists);
++    }
++
++    @Test
++    void testUserExists_ReturnFalse_WhenUserDoesNotExist() throws SQLException {
++        // Tester la méthode userExists pour un utilisateur qui n'existe pas
++        boolean exists = gestionBdd.userExists("nonexistentuser@example.com");
++
++        assertFalse(exists);
++    }
++
++    @Test
++    void tearDown() throws SQLException {
++        // Nettoyer la base de données après les tests
++        try (Statement stmt = conn.createStatement()) {
++            stmt.execute("DROP TABLE IF EXISTS Individus;");
++        }
++        conn.close();
++    }
++}
+Index: src/test/java/controller/MissionCreationTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/controller/MissionCreationTest.java b/src/test/java/controller/MissionCreationTest.java
+new file mode 100644
+--- /dev/null	
++++ b/src/test/java/controller/MissionCreationTest.java	
+@@ -0,0 +1,72 @@
++package controller;
++
++import controller.MissionCreation;
++import model.Mission;
++import model.User;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++
++import java.sql.SQLException;
++
++import static org.junit.jupiter.api.Assertions.*;
++
++class MissionCreationTest {
++
++    @BeforeEach
++    void setUp() {
++        // Configuration avant chaque test si nécessaire
++        // Par exemple, on peut initialiser un utilisateur statique ou d'autres objets nécessaires
++        UserConnection.thisUser = new User("TestUser", "Test", "testuser@mail.com", "0123456789", "1990-01-01", "VOLUNTEER");
++        //MainProgram.base = new MainProgram.Base();  // Supposons que vous avez une classe Base qui gère les missions
++    }
++
++    @Test
++    void testCreateMissionWithoutHealthPro() throws SQLException {
++        // Paramètres pour la mission
++        String name = "Mission1";
++        String description = "Description de la mission";
++        String date = "2024-12-31";
++        String location = "Toulouse";
++        String healthPro = "no";
++
++        // Appeler la méthode de création de mission
++        MissionCreation missionCreate = new MissionCreation();
++        Mission mission = MissionCreation.createMission(name, description, date, location, healthPro); //la fonction createMission doit renvoyer une mission
++        // Récupérer la mission dans la "base" pour vérifier si elle a été ajoutée correctement
++        //Mission createdMission = MainProgram.base.getMissionByName(name); // Assurez-vous que vous avez cette méthode dans Base
++
++        // Vérifier que l'objet Mission a été créé avec les bons paramètres
++        assertNotNull(mission);
++        assertEquals("TestUser", mission.getBeneficiary());
++        assertEquals(name, mission.getMissionName());
++        assertEquals(description, mission.getDescription());
++        assertEquals(date, mission.getDate());
++        assertEquals(location, mission.getLocation());
++        assertNull(mission.getHealthPro());  // Vérifier que le champ healthPro est null (non défini)
++    }
++
++    @Test
++    void testCreateMissionWithHealthPro() throws SQLException {
++        // Paramètres pour la mission
++        String name = "Mission2";
++        String description = "Mission avec HealthPro";
++        String date = "2024-12-31";
++        String location = "Paris";
++        String healthPro = "yes";
++
++        // Appeler la méthode de création de mission
++        MissionCreation.createMission(name, description, date, location, healthPro);
++
++        // Récupérer la mission dans la "base" pour vérifier si elle a été ajoutée correctement
++        Mission createdMission = MainProgram.base.getMissionByName(name); // Assurez-vous que vous avez cette méthode dans Base
++
++        // Vérifier que l'objet Mission a été créé avec les bons paramètres, et qu'il a le type "healthPro"
++        assertNotNull(createdMission);
++        assertEquals("TestUser", createdMission.getBeneficiary());
++        assertEquals(name, createdMission.getMissionName());
++        assertEquals(description, createdMission.getDescription());
++        assertEquals(date, createdMission.getDate());
++        assertEquals(location, createdMission.getLocation());
++        assertEquals("healthPro", createdMission.getHealthPro());  // Vérifier que le champ healthPro est correctement défini
++    }
++}
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\n  <modelVersion>4.0.0</modelVersion>\n\n  <groupId>org.example</groupId>\n  <artifactId>PDLA_Keizer-Lavergne</artifactId>\n  <version>1.0-SNAPSHOT</version>\n  <packaging>jar</packaging>\n\n  <name>PDLA_Keizer-Lavergne</name>\n  <url>http://maven.apache.org</url>\n\n  <properties>\n    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\n    <maven.compiler.source>17</maven.compiler.source>\n    <maven.compiler.target>17</maven.compiler.target>\n  </properties>\n\n  <dependencies>\n    <dependency>\n      <groupId>com.mysql</groupId>\n      <artifactId>mysql-connector-j</artifactId>\n      <version>9.0.0</version>\n    </dependency>\n\n    <dependency>\n      <groupId>junit</groupId>\n      <artifactId>junit</artifactId>\n      <version>3.8.1</version>\n      <scope>test</scope>\n    </dependency>\n  </dependencies>\n</project>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	
++++ b/pom.xml	
+@@ -29,5 +29,11 @@
+       <version>3.8.1</version>
+       <scope>test</scope>
+     </dependency>
++    <dependency>
++      <groupId>org.junit.jupiter</groupId>
++      <artifactId>junit-jupiter</artifactId>
++      <version>RELEASE</version>
++      <scope>test</scope>
++    </dependency>
+   </dependencies>
+ </project>

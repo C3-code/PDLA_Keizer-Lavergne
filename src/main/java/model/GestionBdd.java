@@ -8,6 +8,8 @@ import static controller.UserConnection.thisUser;
 
 
 /*Classe destinée à la gestion de la connexion de l'application à la base de données*/
+/*Nota bene: après réflexion nous nous sommes rendues compte qu'il serait plus judicieux de répartir les méthodes de cette classe
+* dans trois classes différentes (une pour chaque table présentent dans notre base de données, ie : Users, Missions, Avis), c'est un point d'amélioration */
 public class GestionBdd{
 
     /*******Création d'un SINGLETON (design pattern) *******/

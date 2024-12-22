@@ -264,7 +264,7 @@ public class BeneficiaryView extends JFrame {
         // Créer une fenêtre de type JDialog
         JDialog missionFormDialog = new JDialog();
         missionFormDialog.setTitle("Leave a comment");
-        missionFormDialog.setSize(400, 300); // Taille de la fenêtre
+        missionFormDialog.setSize(550, 300); // Taille de la fenêtre
         missionFormDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 
         // Panneau principal pour le formulaire

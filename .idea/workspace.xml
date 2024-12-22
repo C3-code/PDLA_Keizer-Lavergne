@@ -6,20 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ae176f28-9f3a-4ac6-b87f-d7e39ed827b3" name="Changes" comment="MAJ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CommentCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CommentCreation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MissionCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MissionCreation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Beneficiary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Beneficiary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/GestionBdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GestionBdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/HealthPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/HealthPro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Mission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Mission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/BeneficiaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BeneficiaryView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ConnectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ConnectionView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/CreateAccountView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateAccountView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/VolunteerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/VolunteerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/WelcomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/WelcomeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,21 +36,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/keizer/4A_IR/PDLA/PDLA_Keizer-Lavergne",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.testRunning"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit3&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/keizer/4A_IR/PDLA/PDLA_Keizer-Lavergne&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.testRunning&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />

@@ -51,7 +51,7 @@ public class WelcomeView extends JFrame {
             UserConnection.showConnectionView();
             frame.setVisible(false);
         } );
-        
+
         // Afficher la fenêtre
         frame.setVisible(true);
     }

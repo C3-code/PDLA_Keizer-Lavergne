@@ -5,7 +5,7 @@ Le but de cette application est de permettre à des personnes dans le besoin de 
 Les volontaires inscrits sur l'application peuvent ainsi venir en aide à ces personnes-là en acceptant 
 de réaliser certaines missions.
 
-## Instructions pour éxécuter le projet
+## Instructions pour exécuter le projet
 
 - La fonction principale, point d'entrée de l'application, se trouve dans la classe "src/main/java/controller/MainProgram".
 

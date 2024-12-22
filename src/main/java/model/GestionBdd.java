@@ -1,12 +1,8 @@
-package controller;
+package model;
 
-import model.Avis;
-import model.Mission;
-import model.User;
+import controller.UserConnection;
 
 import java.sql.*;
-import java.util.Objects;
-import java.util.Scanner;
 
 import static controller.UserConnection.thisUser;
 

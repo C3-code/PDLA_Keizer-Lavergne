@@ -1,5 +1,6 @@
 package view;
 import controller.*;
+import model.GestionBdd;
 
 import javax.swing.*;
 import java.sql.SQLException;

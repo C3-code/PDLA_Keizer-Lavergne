@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
 import controller.*;
-import model.User;
+import model.GestionBdd;
 
 import static java.lang.Integer.decode;
 import static view.BeneficiaryView.showCommentCreationForm;

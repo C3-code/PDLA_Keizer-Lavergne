@@ -1,7 +1,5 @@
 package model;/*Classe abstraite regroupant l'ensemble des attributs communs a tous les utilisateurs*/
 
-import controller.GestionBdd;
-
 import java.sql.SQLException;
 
 public class User {

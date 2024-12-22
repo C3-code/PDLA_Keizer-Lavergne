@@ -7,8 +7,8 @@ import java.util.Objects;
 
 import controller.*;
 import model.Avis;
+import model.GestionBdd;
 import model.Mission;
-import model.User;
 
 import static java.lang.Integer.decode;
 import static view.WelcomeView.showWelcomeView;

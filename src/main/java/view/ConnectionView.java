@@ -1,12 +1,10 @@
 package view;
 
-import controller.GestionBdd;
+import model.GestionBdd;
 import controller.UserConnection;
 
 import javax.swing.*;
 import java.sql.SQLException;
-
-import static java.lang.Integer.decode;
 
 public class ConnectionView extends JFrame {
 

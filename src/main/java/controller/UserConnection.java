@@ -4,9 +4,6 @@ import model.*;
 import view.*;
 import java.sql.SQLException;
 
-import static controller.MainProgram.base;
-import static controller.MainProgram.main;
-
 
 public class UserConnection {
     public static User thisUser;

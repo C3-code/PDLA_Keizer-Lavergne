@@ -46,7 +46,7 @@ public class CreateAccountView extends JFrame{
         formPanel.add(phoneNumberField);
 
         formPanel.add(new JLabel("Role:"));
-        String[] roles = {"BENEFICIARY", "VOLUNTEER", "HEALTHPRO", "ADMIN"};
+        String[] roles = {"BENEFICIARY", "VOLUNTEER", "HEALTHPRO"};
         roleComboBox = new JComboBox<>(roles);
         formPanel.add(roleComboBox);
 

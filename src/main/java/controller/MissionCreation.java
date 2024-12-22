@@ -10,10 +10,9 @@ import static controller.UserConnection.thisUser;
 
 public class MissionCreation {
 
-
     public static Mission createMission(String name, String description, String date, String location, String healthPro) throws SQLException {
         Mission mission;
-        if (healthPro.equals("yes")){ //il faudra gérer le cas où y a un superviseur justement
+        if (healthPro.equals("yes")){ //il faudra gérer le cas où y a un superviseur
             mission = new Mission(thisUser.getMail(), name, description, date, location, "healthPro");
         }
         else {

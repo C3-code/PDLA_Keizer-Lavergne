@@ -18,7 +18,6 @@ import controller.MainProgram;
 
 public class BeneficiaryView extends JFrame {
 
-
     private static JTextField missionNameField;
     private static JTextField missionDescriptionField;
     private static JTextField missionDateField;
@@ -64,7 +63,7 @@ public class BeneficiaryView extends JFrame {
         JScrollPane scrollPane = new JScrollPane(textArea);
         panel.add(scrollPane);
 
-        /***  Panneau pour terminer une mission (modifié pour être plus compact) ***/
+        /***  Panneau pour terminer une mission ***/
         JPanel endMissionPanel = new JPanel();
         endMissionPanel.setLayout(new BoxLayout(endMissionPanel, BoxLayout.Y_AXIS)); // Disposition verticale
         endMissionPanel.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrer le panel
@@ -90,7 +89,7 @@ public class BeneficiaryView extends JFrame {
         JButton disconnectButton = new JButton("Disconnect");
         endMissionPanel.add(disconnectButton);
 
-        // Ajouter un peu d'espacement entre les éléments
+        // Ajouter un peu d'espace entre les éléments
         endMissionPanel.add(Box.createVerticalStrut(10));
 
         // Ajouter ce panneau à la fenêtre

@@ -20,9 +20,4 @@ public class CommentCreation {
         return avis;
 
     }
-
-    /*public static void saveComment(Avis avis) throws SQLException {
-        MainProgram.base.addComment(avis);
-    }*/
-
 }

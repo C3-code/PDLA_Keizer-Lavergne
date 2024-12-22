@@ -42,7 +42,6 @@ public class WelcomeView extends JFrame {
         frame.getContentPane().add(panel);
 
         // ActionListener pour le bouton "Create an account"
-        // Action pour le bouton "Create an account"
         createAccountButton.addActionListener(e -> {
                     UserConnection.showCreateAccountView();
                     frame.setVisible(false);
@@ -52,8 +51,7 @@ public class WelcomeView extends JFrame {
             UserConnection.showConnectionView();
             frame.setVisible(false);
         } );
-
-
+        
         // Afficher la fenêtre
         frame.setVisible(true);
     }

@@ -1,13 +1,15 @@
-package model;/*Classe abstraite regroupant l'ensemble des attributs communs a tous les utilisateurs*/
+package model;
 
 import java.sql.SQLException;
 
 public class User {
+
+    /** Méthode implémentée différemment dans chacune des sous-classes*/
     public void createMission() throws SQLException {
     }
 
 
-    public enum TypeUser {VOLUNTEER,BENEFICIARY,HEALTHPRO,ADMIN}
+    public enum TypeUser {VOLUNTEER,BENEFICIARY,HEALTHPRO}
     /************Attributs*************/
     private String firstname;
     private String name;

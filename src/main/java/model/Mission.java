@@ -5,15 +5,11 @@ public class Mission {
     private String description;
     private String date;
     private String location;
-
     private String healthPro;
-
     private String beneficiary;
-
     private String volunteer;
 
-    /** Pour une mission plusieurs états sont possibles
-     *
+    /** Pour une mission plusieurs états sont possibles (OPEN,ACCEPTED,DONE)
      */
     private String state;
 

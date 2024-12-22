@@ -7,18 +7,21 @@ import java.sql.*;
 import static controller.UserConnection.thisUser;
 
 
-/*Classe destinée a gerer la connexion de l'application a la base de données*/
+/*Classe destinée à la gestion de la connexion de l'application à la base de données*/
 public class GestionBdd{
 
+    /*******Création d'un SINGLETON (design pattern) *******/
     private static final GestionBdd BDD = new GestionBdd();
-    public static GestionBdd getInstance() {
+    public static GestionBdd getInstance() { //instance rendue publique pour que les différentes classes du projet puissent y accéder
         return BDD;
     }
+
     /*********Constantes**********/
     String link = "jdbc:mysql://srv-bdens.insa-toulouse.fr:3306/projet_gei_020 ";
     String userName = "projet_gei_020";
     String pwd = "ih9sieT5";
 
+    /*********Attributs**********/
     private String url;
     private String projectName;
     private String password;
@@ -32,25 +35,18 @@ public class GestionBdd{
         this.password = pwd;
     }
 
-    /************Methode*******/
+    /************Methodes*******/
     public void Connexion_BDD() {
 
         try {
-            //Class.forName("com.mysql.jdbc.Driver");
             this.conn = DriverManager.getConnection(this.url, this.projectName, this.password);
-
-
-            //conn.close();
         } catch (SQLException e) {
-            System.err.println("Driver non chargé !");
+            System.err.println("Driver non chargé !"); //gérer la levée d'erreur
             e.printStackTrace();
         }
-
     }
 
     public void addPerson(User user) throws SQLException {
-
-        //Statement statement = this.conn.createStatement();
 
         query = "INSERT INTO Individus(nom, prenom, mail, numeroTelephone, dateNaissance, typeUser) VALUES (?, ?, ?, ?, ?, ?)";
 
@@ -74,7 +70,6 @@ public class GestionBdd{
 
     public void getProfile(String mail) throws SQLException {
 
-        //par la suite faire un if pour differencier getcurrent missions d'un volontaire et d'un beneficiare
         // Utilisation d'un PreparedStatement pour la requête avec paramètre
         String query = "SELECT nom,prenom,numeroTelephone,dateNaissance,typeUser FROM Individus WHERE (mail = ? );";
 
@@ -83,7 +78,7 @@ public class GestionBdd{
             // Lier le paramètre (l'email de l'utilisateur)
             statement.setString(1, mail);
 
-            /* Construction du catalogue des missions depuis les informations de la base de données */
+            //Construction du catalogue des missions depuis les informations de la base de données
             ResultSet result = statement.executeQuery();
             while (result.next()) {
                 String nom = result.getString("nom");
@@ -100,9 +95,6 @@ public class GestionBdd{
     }
 
     public void addMission(String mail, Mission mission) throws SQLException {
-
-        //Statement statement = this.conn.createStatement();
-
         query = "INSERT INTO Missions(beneficiary,missionName,description,expirationDate,location,healthPro,state,volunteer) VALUES (?, ?, ?, ?, ?,?,?,?)";
 
         try (PreparedStatement statement = this.conn.prepareStatement(query)) {
@@ -125,7 +117,7 @@ public class GestionBdd{
         }
     }
 
-    /** Display the table of current open missions
+    /**Affichage de la liste des missions courantes
      *
      * @throws SQLException
      */
@@ -367,47 +359,7 @@ public class GestionBdd{
             throw ex;
         }
     }
-    /*public void createCommentFromMissionId(String comment, int id) throws SQLException {
 
-        //par la suite faire un if pour differencier getcurrent missions d'un volontaire et d'un beneficiare
-        // Utilisation d'un PreparedStatement pour la requête avec paramètre
-        String query = "SELECT * FROM Missions WHERE id = ? ;";
-
-        try (PreparedStatement statement = this.conn.prepareStatement(query)) {
-
-            // Lier le paramètre (l'email de l'utilisateur)
-            statement.setInt(1, id);
-
-            //Construction du catalogue des missions depuis les informations de la base de données
-            ResultSet result = statement.executeQuery();
-
-            if (result.next()) {
-                String beneficiary = result.getString("beneficiary");
-                String nomMission = result.getString("missionName");
-                //String description = result.getString("description");
-                String date = result.getString("expirationDate");
-                //String location = result.getString("location");
-                String volunteer = result.getString("volunteer");
-
-
-                Avis avis;
-
-                if (thisUser.getType().equals("BENEFICIARY")) {
-                    avis = new Avis(nomMission, id, date, comment, volunteer);
-                } else {
-                    avis = new Avis(nomMission, id, date, comment, beneficiary);
-                }
-
-                MainProgram.base.addComment(avis);
-            } else {
-                throw new SQLException("Mission with id" + id + "not found.");
-            }
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            throw ex;
-        }
-    }*/
 
     public void addComment(Avis avis) throws SQLException {
         query = "INSERT INTO Avis(idMissionn, utilisateur,missionName,commentDate,destinataire,commentaire) VALUES (?, ?,?, ?, ?, ?)";
@@ -457,12 +409,5 @@ public class GestionBdd{
         }
         return texte;
     }
-
-
-
-
-
-    //statement.executeUpdate("INSERT INTO Individus(nom,prenom,mail,numeroTelephone,dateNaissance,typeUser)" + "VALUES(" + user.getName() + "," + user.getFirstname() + "," + user.getMail() + "," + user.getPhoneNumber() + "," + user.getBirthDate() + ", 'Beneficiary')");
-
 }
 

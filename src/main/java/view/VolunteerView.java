@@ -50,7 +50,7 @@ public class VolunteerView extends JFrame {
         JScrollPane scrollPane = new JScrollPane(textArea);
         panel.add(scrollPane);
 
-        /***  Panneau pour participer à une mission (modifié pour être plus compact) ***/
+        /***  Panneau pour participer à une mission ***/
         JPanel participatePanel = new JPanel();
         participatePanel.setLayout(new BoxLayout(participatePanel, BoxLayout.Y_AXIS)); // Disposition verticale
         participatePanel.setAlignmentX(Component.CENTER_ALIGNMENT); // Centrer le panel
@@ -166,8 +166,4 @@ public class VolunteerView extends JFrame {
         // Afficher la fenêtre
         frame.setVisible(true);
     }
-
-    /*public static void main(String[] args) {
-        SwingUtilities.invokeLater(VolunteerView::showVolunteerView);
-    }*/
 }

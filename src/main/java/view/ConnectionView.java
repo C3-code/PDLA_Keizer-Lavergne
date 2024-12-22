@@ -68,8 +68,7 @@ public class ConnectionView extends JFrame {
         // Méthode pour récupérer les données du formulaire
         private void submitConnection() throws SQLException {
             String mail = mailField.getText();
-            // Appeler la méthode du contrôleur pour traiter ces données
-            UserConnection.connectUser(mail);
+            UserConnection.connectUser(mail); // Appeler la méthode du contrôleur pour traiter ces données
         }
 
 }

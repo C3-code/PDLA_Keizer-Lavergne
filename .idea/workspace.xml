@@ -5,21 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae176f28-9f3a-4ac6-b87f-d7e39ed827b3" name="Changes" comment="MAJ">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_12_2024_18_20_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_12_2024_18_20_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_12_2024_18_20__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/controller/UserConnectionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CommentCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CommentCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainProgram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MissionCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MissionCreation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Avis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Avis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Beneficiary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Beneficiary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/GestionBdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GestionBdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/HealthPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/HealthPro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Mission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Mission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/BeneficiaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BeneficiaryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ConnectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ConnectionView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/CreateAccountView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateAccountView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/CommentCreationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/CommentCreationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/VolunteerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/VolunteerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/WelcomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/WelcomeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +55,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/keizer/4A_IR/PDLA/PDLA_Keizer-Lavergne",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
@@ -104,6 +105,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CommentCreationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PDLA_Keizer-Lavergne" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.CommentCreationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MissionCreationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PDLA_Keizer-Lavergne" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.MissionCreationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserConnectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PDLA_Keizer-Lavergne" />
       <extension name="coverage">
@@ -115,22 +146,6 @@
       <option name="PACKAGE_NAME" value="controller" />
       <option name="MAIN_CLASS_NAME" value="controller.UserConnectionTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserConnectionTest.testSetUpUser_Beneficiary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PDLA_Keizer-Lavergne" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.UserConnectionTest" />
-      <option name="METHOD_NAME" value="testSetUpUser_Beneficiary" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -167,29 +182,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserConnectionTest.testSetUpUser_Volunteer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PDLA_Keizer-Lavergne" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.UserConnectionTest" />
-      <option name="METHOD_NAME" value="testSetUpUser_Volunteer" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.UserConnectionTest" />
+        <item itemvalue="JUnit.MissionCreationTest" />
+        <item itemvalue="JUnit.CommentCreationTest" />
         <item itemvalue="JUnit.UserConnectionTest.testSetUpUser_InvalidRole" />
         <item itemvalue="JUnit.UserConnectionTest.testSetUpUser_HealthPro" />
-        <item itemvalue="JUnit.UserConnectionTest.testSetUpUser_Volunteer" />
-        <item itemvalue="JUnit.UserConnectionTest.testSetUpUser_Beneficiary" />
       </list>
     </recent_temporary>
   </component>
@@ -236,20 +235,5 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="MAJ" />
     <option name="LAST_COMMIT_MESSAGE" value="MAJ" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/controller/UserConnectionTest.java</url>
-          <line>14</line>
-          <properties class="controller.UserConnectionTest" method="testSetUpUser_Beneficiary">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
